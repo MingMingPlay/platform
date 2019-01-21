@@ -1,0 +1,62 @@
+{
+    "name": "yanwei-web",
+    "version": "1.0.0",
+    "description": "platform and merchant",
+    "author": "yanwei",
+    "private": true,
+    "scripts": {
+        "help": "Please see the README.md",
+        "build": "rimraf dist && node build/webpack.prod.config.js",
+        "m": "webpack-dev-server --config build/webpack.dev.config.js -d --inline --hot --progress --define merchant",
+        "p": "webpack-dev-server --config build/webpack.dev.config.js -d --inline --hot --progress --define platform"
+    },
+    "dependencies": {
+        "echarts": "^3.8.0",
+        "element-table": "^2.2.2",
+        "element-ui": "^1.4.2",
+        "sha1": "1.1.1",
+        "vue": "^2.1.8",
+        "vue-awesome-swiper": "^3.1.2",
+        "vue-resource": "^1.3.1",
+        "vue-router": "^2.4.0",
+        "vue-ueditor": "^0.1.3",
+        "vuex": "^2.2.1"
+    },
+    "devDependencies": {
+        "autoprefixer": "^7.1.4",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "chalk": "^2.1.0",
+        "copy-webpack-plugin": "^4.0.1",
+        "css-loader": "^0.28.7",
+        "es6-promise": "^4.1.1",
+        "extract-text-webpack-plugin": "^3.0.0",
+        "file-loader": "^0.11.2",
+        "html-webpack-plugin": "^2.30.1",
+        "node-sass": "^4.5.3",
+        "open-browser-webpack-plugin": "^0.0.5",
+        "optimize-css-assets-webpack-plugin": "^3.2.0",
+        "ora": "^1.3.0",
+        "postcss-loader": "^2.0.6",
+        "rimraf": "^2.6.2",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.18.2",
+        "transform-runtime": "^0.0.0",
+        "url-loader": "^0.5.9",
+        "vue-loader": "^11.1.4",
+        "vue-style-loader": "^3.0.3",
+        "vue-template-compiler": "^2.4.4",
+        "webpack": "^3.6.0",
+        "webpack-dev-server": "^2.8.2",
+        "webpack-merge": "^4.1.0"
+    },
+    "engines": {
+        "node": ">= 4.0.0",
+        "npm": ">= 3.0.0"
+    }
+}

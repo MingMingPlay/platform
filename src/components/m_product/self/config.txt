@@ -1,0 +1,37 @@
+sellingPrice; //卖价
+regularPrice; //商品原价
+costPrice;  //成本价/供货价
+employeePrice;  //员工价
+inventory; //库存数量
+barcode; //条码
+
+Active(5, "有效"),
+ProductDraft(10, "未录入完整"),     //未录入完整的商品数据
+AgentCheck(11, "待审核[代理商]"),   // 行销商品 云平台审核通过之后 进入代理商待审核
+AgentRefuse(12, "未通过[代理商]"),  // 审核不同意[代理商]
+CloudCheck(13, "待审核[云平台]"),   // [云平台]
+CloudRefuse(14, "未通过[云平台]"),  // 审核不同意[云平台]
+Approval(15, "审核通过"),           // 商品审核通过 就是 处于 仓储中[下架 处于仓储中]
+Online(16, "销售中"),               //点击上架 就是销售中
+Offline(17, "下架"),                //点击下架
+
+
+Active(5, "有效"),                 // 仓库中
+ProductDraft(10, "未录入完整"),     // 未录入完整
+AgentCheck(11, "待审核[代理商]"),   // 待审核[代理商]
+AgentRefuse(12, "未通过[代理商]"),  // 未通过[代理商]
+CloudCheck(13, "待审核[云平台]"),   // 待审核[云平台]
+CloudRefuse(14, "未通过[云平台]"),  // 未通过[云平台]
+Approval(15, "审核通过"),           // 仓库中
+Online(16, "销售中"),               // 销售中
+Offline(17, "下架"),                // 仓库中
+
+
+查询条件
+    Selling :  销售中
+    Storage : 仓库中
+    AStorage :    仓库中[行销--代理商品 ]
+    CloudCheck : 云平台待审核
+    Check :  行销待审核
+    Refuse  : 未通过
+    All : 全部

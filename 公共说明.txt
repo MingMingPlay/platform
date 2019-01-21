@@ -1,0 +1,45 @@
+﻿﻿说明规则：
+新增/修改/删除过什么？有什么功能？
+
+例：
+杨家成
+修改商品列表样式，文件为common.css，适用于所有商品列表。
+
+---------------------------------------------------------------------------------------
+
+命名规则：
+样式：中横线                  例：class="test-first"
+文件夹&文件名：中横线          例：user-info/user-info.vue
+特殊情况用下横线区分           例：c_user-info/c_user-info.vue   c_表示云平台，m_表示阅商机，a_表示作家端
+变量：驼峰                    例：var helloWorld = 'test'
+路由用下横线和左斜杠           例：/c_order/order_detail         c_表示云平台，m_表示阅商机，a_表示作家端
+
+---------------------------------------------------------------------------------------
+
+杨家成
+1、修改导航栏样式，全局生效，文件pc-sidebar.vue
+
+陈杨
+1、修改main.js，把路由功能分离成router文件单独管理	2017-5-27 14:28:59
+2、修改common.css，增加.table-composing，用于表格排版规则（内容固定居中；内容不定居左）
+
+杨家成
+1、公共样式里面加了商品详情的样式，所有商品详情通用。
+2、修改了sidebar，能正常展开和定位当前选中。
+
+dialog的特殊情况，需要左右的时候加 class="left-align"
+
+杨家成
+1、所有新增商品页面的公共样式放到common.css里面了
+2、金额前面加'￥'过滤器  currency
+
+3、需要去掉表格序号标题的内padding => label-class-name="table-index-title"
+如：<el-table-column type="index" label="序号" width="49" align="center" label-class-name="table-index-title"></el-table-column>
+
+4、需要去掉表格除序号的第一列的左padding =>  label-class-name="first-col-no-padding" class-name="first-col-no-padding"
+如： <el-table-column label="商品名称" width="250" label-class-name="first-col-no-padding" class-name="first-col-no-padding">
+
+5、如果表格是expand类型，即可以展开，第一列样式为 => label-class-name="first-title-left" class-name="first-content-left"
+如：<el-table-column prop="name" label="规格名称" label-class-name="first-title-left" class-name="first-content-left"></el-table-column>
+
+7、validator.js文件加了一个验证字符串长度的方法validateStringLength

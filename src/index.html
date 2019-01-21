@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="cache" content="no-cache">
+		<title><%= htmlWebpackPlugin.options.title %></title>
+
+        <!--[if IE 8]>
+        <script src="/static/browser/browser-versions.js"></script>
+        <![endif]-->
+        <!--[if IE 7]>
+        <script src="/static/browser/browser-versions.js"></script>
+        <![endif]-->
+        <!--[if lt IE 7]>
+        <script src="/static/browser/browser-versions.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+            // 用给url加时间戳的方式来刷新缓存
+            var url = window.location.href,
+                urlArr = null,
+                t = '',
+                newT = new Date().getTime();
+            if(url.indexOf('?t=') === -1){
+                urlArr = url.split('#');
+                if(urlArr.length > 1){
+                    url = urlArr.join('?t=' + newT + '#')
+                }else {
+                    url += '?t=' + newT;
+                }
+                window.location.replace(url);
+
+            }
+        </script>
+	</head>
+	<body>
+		<div id="pc"></div>
+	</body>
+</html>

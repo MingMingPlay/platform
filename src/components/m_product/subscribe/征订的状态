@@ -1,0 +1,4 @@
+    Published(21, "已发布"), //征订
+    SubscribeEnd(22, "征订结束"), //征订
+    Refunding(23, "退款中"), //征订
+    Completed(24, "已完成"), //征订

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>下载文件</title>
+        <script type="text/javascript">
+        	/**
+             * @description 得到url中指定键名的值
+             * @param {key} 键名
+             * @return {value} 返回该键值
+             * @example {?company=申通快递&transportId=0001}
+             */
+            function getAssignValue(url, key) {
+                // 正则表达式可变时，需要使用new关键字
+                var patt = new RegExp(key + '=([^&]*)', 'i');
+                var result = url.match(patt) || [null, null];
+                result = result[1];
+                return result;
+            }
+            /*end*/
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var targetFile = getAssignValue(window.location.search, 'file');
+        	window.open(targetFile || '', '_self');
+        </script>
+    </body>
+</html>

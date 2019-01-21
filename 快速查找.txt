@@ -1,0 +1,61 @@
+1、超过一行，省略号
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	
+2、图片前缀
+	http://img.yanwei365.com/
+	
+3、附件
+	UserAvatar(11, "用户头像"),
+	CompanyLogo(12, "公司Logo"),
+	CompanyLicense(13, "营业执照"),
+	IdCard(15, "个人身份证"),
+	CategoryLogo(21, "品类Logo"),
+	BrandLogo(22, "品牌Logo"),
+	Other(99, "其它");
+	
+4、递归函数
+	switchParentId(val, key1, key2) {
+		var data = this.collapseData,
+			newVal = null;
+		for(var i = 0, len = data.length; i < len; i++) {
+			if(val === data[i][key1]) {
+				newVal = data[i][key2];
+				break;
+			} else if(data[i].children != undefined) {
+				factorial(data[i].children);
+			}
+		}
+		// 递归调用
+		function factorial(data) {
+			for(var i = 0, len = data.length; i < len; i++) {
+				if(val === data[i][key1]) {
+					name = data[i][key2];
+					break;
+				} else if(data[i].children != undefined) return factorial(data[i].children)
+			}
+		}
+		return newVal;
+	},
+	
+5、必填项
+	class="is-required"
+	
+6、文件导入
+   import { basic_api, list_api } from './var.js'
+	import { pubObj } from '../../../assets/unit/pubObj.js'
+	
+7、选择框乱码
+interceptors(result) {
+				const categoryName = result.data.mainCategoryName;
+				const dropdown = document.getElementsByClassName('el-select-dropdown')[0];
+				const ele = dropdown.getElementsByClassName('el-select-dropdown__item');
+				const bool = [].slice.call(ele).some((li) => {
+					const text = li.firstElementChild.textContent;
+					return categoryName === text;
+				});
+				if(bool) return result;
+				else result.data.mainCategorySid = null;
+				return result;
+			},

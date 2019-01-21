@@ -1,0 +1,6 @@
+/*可以在这里添加你自己的css*/
+@charset "utf-8";
+img {
+    max-width: 100%; /*图片自适应宽度*/
+    vertical-align: middle;
+}
